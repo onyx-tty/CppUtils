@@ -1,0 +1,54 @@
+{
+        "version": 3,
+        "configurePresets": [
+                {
+                        "name": "Debug",
+                        "displayName": "",
+                        "description": "",
+                        "generator": "Ninja",
+                        "binaryDir": "build/Debug",
+                        "cacheVariables": {
+                                "CMAKE_BUILD_TYPE": "Debug",
+                                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/build/${presetName}/install",
+                                "LOG_DEBUG": "ON"
+                        }
+                },
+                {
+                        "name": "Lint",
+                        "displayName": "Lint",
+                        "description": "Debug build with clang-tidy static analysis enabled",
+                        "generator": "Ninja",
+                        "binaryDir": "build/Lint",
+                        "cacheVariables": {
+                                "CMAKE_BUILD_TYPE": "Debug",
+                                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/build/${presetName}/install",
+                                "CMAKE_C_COMPILER": "clang",
+                                "CMAKE_CXX_COMPILER": "clang++",
+                                "ENABLE_CLANG_TIDY": "ON",
+                                "LOG_DEBUG": "ON"
+                        }
+                },
+                {
+                        "name": "Release",
+                        "displayName": "",
+                        "description": "",
+                        "generator": "Ninja",
+                        "binaryDir": "build/Release",
+                        "cacheVariables": {
+                                "CMAKE_BUILD_TYPE": "Release",
+                                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/build/${presetName}/install"
+                        }
+                },
+                {
+                        "name": "RelWithDebInfo",
+                        "displayName": "",
+                        "description": "",
+                        "generator": "Ninja",
+                        "binaryDir": "build/RelDebWithInfo",
+                        "cacheVariables": {
+                                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/build/${presetName}/install"
+                        }
+                }
+        ]
+}
