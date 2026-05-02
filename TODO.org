@@ -1,0 +1,14 @@
+#+TITLE: CppUtils TODO
+#+OPTIONS: todo:t
+#+OPTIONS: toc:1
+#+OPTIONS: H:1
+#+OPTIONS: num:1
+#+OPTIONS: \n:t
+
+* General
+** [ ] README.md
+** [X] Tests
+** [ ] Standardized test naming
+** [ ] Prevent incompatible template instantiations to eliminate runtime-level errors
+** [X] CPPUTILS ENABLE QT
+
