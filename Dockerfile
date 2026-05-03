@@ -7,8 +7,8 @@ RUN set -ex;                                                                  \
 COPY . /app
 WORKDIR /app
 
-RUN set -ex;                                                        \
-    cmake --preset Debug -DBUILD_TESTS=ON -DCPPUTILS_ENABLE_QT=ON;  \
+RUN set -ex;                                      \
+    cmake --preset Debug -DCPPUTILS_ENABLE_QT=ON; \
     cmake --build build/Debug
 
 RUN ctest --test-dir /app/build/Debug

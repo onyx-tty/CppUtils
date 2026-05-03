@@ -33,7 +33,7 @@ jobs:
     - name: Configure CMake
       # Configure CMake with a specific preset.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake --preset ${{env.BUILD_TYPE}} -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DBUILD_TESTS=ON -DCPPUTILS_ENABLE_QT=ON
+      run: cmake --preset ${{env.BUILD_TYPE}} -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCPPUTILS_ENABLE_QT=ON
 
     - name: Build
       # Build the program in the specified build directory.

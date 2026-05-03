@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.14)
-project(CppUtils VERSION 0.13.0 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.21)
+project(CppUtils VERSION 0.13.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -21,7 +21,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Build shared by default
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
-option(BUILD_TESTS "Build tests" ON)
 option(LOG_DEBUG "Print debug-level logs" OFF)
 option(CPPUTILS_ENABLE_QT "Enable Qt in CppUtils" OFF)
 
@@ -38,7 +37,7 @@ set(INCLUDE_DIR
 
 add_subdirectory(src)
 
-if(BUILD_TESTS)
+if(PROJECT_IS_TOP_LEVEL)
         find_package(GTest REQUIRED)
         enable_testing()
         add_subdirectory(tests)
