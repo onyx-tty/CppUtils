@@ -45,14 +45,14 @@ if(BUILD_TESTS)
 endif()
 
 # Install headers
-if(CPPUTILS_ENABLE_QT) # Do nothing
+if(CPPUTILS_ENABLE_QT) # Only non-Qt
         install(
                 DIRECTORY ${INCLUDE_DIR}/
                 DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
                 FILES_MATCHING
                 PATTERN "*.h"
                 PATTERN "*.tpp")
-else() # Filter out Qt headers from being installed
+else() # Both non-Qt and Qt
         install(
                 DIRECTORY ${INCLUDE_DIR}/
                 DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
