@@ -21,7 +21,7 @@ endif()
 
 if(CPPUTILS_ENABLE_QT AND NOT TARGET CppUtils_AllQt)
         add_library(CppUtils_AllQt INTERFACE)
-        add_library(CppUtils::AllQt ALIAS CppUtils_AllNonQt)
+        add_library(CppUtils::AllQt ALIAS CppUtils_AllQt)
         target_link_libraries(CppUtils_AllQt INTERFACE
                 CppUtils::Conversion
                 #CppUtils::Log
