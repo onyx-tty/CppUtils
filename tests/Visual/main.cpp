@@ -1,7 +1,9 @@
 // SPDX-FileCopyrightText: 2026 Łukasz Wrodarczyk
 // SPDX-License-Identifier: MIT
 
-#include "Log/QtLogTest.h"
+#ifdef CPPUTILS_ENABLE_QT
+        #include "Log/QtLogTest.h"
+#endif
 
 int main() {
 #ifdef CPPUTILS_ENABLE_QT
