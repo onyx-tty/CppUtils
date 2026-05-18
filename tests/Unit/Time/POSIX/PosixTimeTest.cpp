@@ -44,18 +44,18 @@ TEST(GetCurrentMidnightTest, TwoCallsReturnSameValueWithinSameDay) {
 // TODO TwoCallsSpacedBy24HoursIfCalledOnDifferentDays
 // t1 = findMidnight(), t2 = findMidnight() + epoch_duration::day
 // requires params
-TEST(FindCloserHourTest, Hour1IsCloser) {
+TEST(closerToNowTest, Hour1IsCloser) {
         const time_t hour1  = time(nullptr);
         const time_t hour2  = 555;
-        const time_t closer = posix::findCloserHour(hour1, hour2);
+        const time_t closer = posix::closerToNow(hour1, hour2);
 
         EXPECT_EQ(closer, hour1);
 }
 
-TEST(FindCloserHourTest, Hour2IsCloser) {
+TEST(closerToNowTest, Hour2IsCloser) {
         const time_t hour1  = 555;
         const time_t hour2  = time(nullptr);
-        const time_t closer = posix::findCloserHour(hour1, hour2);
+        const time_t closer = posix::closerToNow(hour1, hour2);
 
         EXPECT_EQ(closer, hour2);
 }

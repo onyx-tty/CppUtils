@@ -19,7 +19,7 @@ time_t timing::posix::getCurrentMidnight() {
         return timing::posix::getMidnight(std::time(nullptr));
 }
 
-time_t timing::posix::findCloserHour(time_t hour1, time_t hour2) {
+time_t timing::posix::closerToNow(time_t hour1, time_t hour2) {
         const time_t now   = std::time(nullptr);
         const time_t diff1 = std::abs(hour1 - now);
         const time_t diff2 = std::abs(hour2 - now);
