@@ -13,7 +13,7 @@ namespace qt::string {
 
 // TODO Block through concepts
 template<typename T>
-QString toQString(const T& value) {
+[[nodiscard]] QString toQString(const T& value) {
         if constexpr (std::is_arithmetic_v<T>) {
                 return QString::number(value);
         } else if constexpr (std::is_same_v<T, std::string>) {
