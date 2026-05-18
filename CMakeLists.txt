@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(CppUtils VERSION 0.14.0 LANGUAGES CXX)
+project(CppUtils VERSION 0.15.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -65,7 +65,6 @@ endif()
 install( # Install compiled artifacts to correct destinations, register all targets
          # under the name CppUtils_export
         TARGETS CppUtils_AllNonQt
-                CppUtils_Conversion
                 CppUtils_String
                 CppUtils_Time CppUtils_Time_Constants CppUtils_Time_POSIX
         EXPORT CppUtils_export

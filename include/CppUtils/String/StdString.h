@@ -3,9 +3,6 @@
 
 #pragma once
 
-#include "CppUtils/Conversion/ConversionPolicies.h"
-
-#include <optional>
 #include <string>
 
 namespace string {
