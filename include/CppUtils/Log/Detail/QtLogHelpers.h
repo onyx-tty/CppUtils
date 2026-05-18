@@ -4,6 +4,7 @@
 #pragma once
 
 #include <cstddef>
+#include <source_location>
 #include <string_view>
 #include <QString>
 
@@ -11,26 +12,10 @@ namespace qt {
 namespace log {
 namespace detail {
 
-// TODO Return pair instead
-[[nodiscard]] constexpr size_t getTrimmedPrettyFunctionOffset(std::string_view pretty_function) {
-        const size_t paren = pretty_function.find('(');
-        if (paren == std::string_view::npos) { return 0; }
+void fatalImpl(const QString&              msg,
+               const std::source_location& loc = std::source_location::current());
 
-        const size_t space = pretty_function.rfind(' ', paren);
-        if (space == std::string_view::npos) { return 0; }
-
-        return space + 1;
-}
-
-[[nodiscard]] constexpr size_t getTrimmedPrettyFunctionLength(std::string_view pretty_function) {
-        const size_t paren = pretty_function.find('(');
-        if (paren == std::string_view::npos) { return pretty_function.size(); }
-
-        const size_t space = pretty_function.rfind(' ', paren);
-        if (space == std::string_view::npos) { return paren; }
-
-        return paren - space - 1;
-}
+[[nodiscard]] QString getTrimmedFuncName(const std::source_location& loc);
 
 // Concatenate all arguments into one string
 [[nodiscard]] inline QString concatArgs() {
