@@ -5,9 +5,7 @@
 
 #include "CppUtils/String/QtString.h"
 
-#include <cstddef>
 #include <source_location>
-#include <string_view>
 #include <QString>
 
 namespace qt::log::detail {

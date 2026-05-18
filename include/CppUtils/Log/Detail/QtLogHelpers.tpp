@@ -5,6 +5,7 @@
 
 #include "CppUtils/Log/Detail/QtLogHelpers.h"
 
+#include <source_location>
 #include <QString>
 
 namespace qt::log::detail {
@@ -27,4 +28,4 @@ void fatalImpl(const QString& msg, const std::source_location& loc) {
         return full.mid(space + 1, paren - space - 1);
 }
 
-}
+} // namespace qt::log::detail
