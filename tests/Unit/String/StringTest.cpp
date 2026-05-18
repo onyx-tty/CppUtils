@@ -53,3 +53,49 @@ TEST(makeLowerTest, EmptyString) {
         const auto str = makeLower("");
         EXPECT_EQ(str, "");
 }
+
+/* string_utils::toUpper */
+TEST(ToUpperTest, AllLower) {
+        std::string str = "hello";
+        toUpper(str);
+        EXPECT_EQ(str, "HELLO");
+}
+
+TEST(ToUpperTest, MixedCase) {
+        std::string str = "WoOzY";
+        toUpper(str);
+        EXPECT_EQ(str, "WOOZY");
+}
+
+TEST(ToUpperTest, AlreadyUpper) {
+        std::string str = "HELLO";
+        toUpper(str);
+        EXPECT_EQ(str, "HELLO");
+}
+
+TEST(ToUpperTest, EmptyString) {
+        std::string str = "";
+        toUpper(str);
+        EXPECT_EQ(str, "");
+}
+
+/* string_utils::makeUpper */
+TEST(makeUpperTest, AllLower) {
+        const std::string str = makeUpper("hello");
+        EXPECT_EQ(str, "HELLO");
+}
+
+TEST(makeUpperTest, MixedCase) {
+        const std::string str = makeUpper("WoOzY");
+        EXPECT_EQ(str, "WOOZY");
+}
+
+TEST(makeUpperTest, AlreadyUpper) {
+        const auto str = makeUpper("HELLO");
+        EXPECT_EQ(str, "HELLO");
+}
+
+TEST(makeUpperTest, EmptyString) {
+        const auto str = makeUpper("");
+        EXPECT_EQ(str, "");
+}

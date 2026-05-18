@@ -44,9 +44,9 @@ Currently, only Qt logging backend is supported.
 
 #### StdString.h
 
-Two variants for lower-casing std::string, one modifies in place, the other returns a new string.
+Two variants for lower-casing and upper-casing std::string, one modifies in place, the other returns a new string.
 
-Available functions: `toLower()`, `makeLower()`
+Available functions: `toLower()`, `makeLower()`, `toUpper()`, `makeUpper()`
 
 ``` C++
 using namespace string;
@@ -55,6 +55,10 @@ std::string str = "AbCdE";
 toLower(str);        // str -> "abcde"
 
 makeLower("STRING"); // return value -> "string"
+
+toUpper(str);        // str -> "ABCDE"
+
+makeUpper("string"); // return value -> "STRING"
 ```
 
 #### QtString.h

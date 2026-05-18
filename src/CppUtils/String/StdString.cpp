@@ -16,3 +16,14 @@ std::string string::makeLower(std::string str) {
         string::toLower(str);
         return str;
 }
+
+void string::toUpper(std::string& str) {
+        for (char& ch : str) {
+                ch = static_cast<char>(std::toupper(static_cast<unsigned char>(ch)));
+        }
+}
+
+[[nodiscard]] std::string string::makeUpper(std::string str) {
+        string::toUpper(str);
+        return str;
+}
