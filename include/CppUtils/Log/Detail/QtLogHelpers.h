@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "CppUtils/String/QtString.h"
+
 #include <cstddef>
 #include <source_location>
 #include <string_view>
@@ -21,7 +23,9 @@ void fatalImpl(const QString&              msg,
 }
 
 template<typename MainStr, typename... RestStr>
-[[nodiscard]] inline QString concatArgs(const MainStr& main_string, const RestStr&... rest_strings);
+[[nodiscard]] inline QString concatArgs(const MainStr& main_string, const RestStr&... rest_strings) {
+        return qt::string::toQString(main_string) + " " + concatArgs(rest_strings...);
+}
 
 } // namespace qt::log::detail
 

@@ -9,8 +9,10 @@
 #include <stdexcept>
 #include <vector>
 
+namespace c_string {
+
 template<size_t N>
-constexpr std::optional<size_t> c_string::findTerminatorIndex(const char (&str)[N]) {
+constexpr std::optional<size_t> findTerminatorIndex(const char (&str)[N]) {
         for (size_t i = 0; i != N; ++i) {
                 if (str[i] == '\0') { return i; }
         }
@@ -19,7 +21,7 @@ constexpr std::optional<size_t> c_string::findTerminatorIndex(const char (&str)[
 }
 
 template<size_t N1, size_t N2>
-auto c_string::join(const char (&str1)[N1], const char (&str2)[N2], bool allow_empty) {
+auto join(const char (&str1)[N1], const char (&str2)[N2], bool allow_empty) {
         // Find actual length
         const size_t n1 = findTerminatorIndex(str1).value_or(N1),
                      n2 = findTerminatorIndex(str2).value_or(N2);
@@ -42,3 +44,5 @@ auto c_string::join(const char (&str1)[N1], const char (&str2)[N2], bool allow_e
 
         return result;
 }
+
+} // namespace c_string
