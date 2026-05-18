@@ -9,7 +9,7 @@ WORKDIR /app
 
 RUN set -ex;                                      \
     cmake --preset Debug -DCPPUTILS_ENABLE_QT=ON; \
-    cmake --build build/Debug
+    cmake --build --preset Debug
 
-RUN ctest --test-dir /app/build/Debug
+RUN ctest --preset Debug /app/build/Debug
 
