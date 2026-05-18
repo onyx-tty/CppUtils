@@ -8,7 +8,9 @@ target_include_directories(CppUtils_VisualTests PRIVATE
         ${INCLUDE_DIR}
         ${CMAKE_CURRENT_LIST_DIR})
 
-target_compile_definitions(CppUtils_VisualTests PUBLIC LOG_DEBUG)
+target_compile_definitions(CppUtils_VisualTests PUBLIC
+        LOG_DEBUG
+        CPPUTILS_ENABLE_QT)
 
 if(CPPUTILS_ENABLE_QT)
         target_link_libraries(CppUtils_VisualTests PRIVATE
