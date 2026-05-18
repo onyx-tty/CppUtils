@@ -7,9 +7,6 @@ if(NOT TARGET CppUtils::String)
         target_include_directories(CppUtils_String PUBLIC
                 $<BUILD_INTERFACE:${INCLUDE_DIR}>
                 $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-
-        target_link_libraries(CppUtils_String PRIVATE
-                CppUtils::Conversion)
 endif()
 
 # Qt
