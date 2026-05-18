@@ -16,26 +16,26 @@ using namespace timing;
         return (t1 - t2) > timing::day;
 }
 
-TEST(GetMidnightTest, ReturnsCorrectMidnight) {
+TEST(RoundToMidnightTest, ReturnsCorrectMidnight) {
         // Afternoon 2025-10-01 15:45 UTC = 1759333500
         // Midnight  2025-10-01 00:00 UTC = 1759276800
-        EXPECT_EQ(posix::getMidnight(1759333500), 1759276800);
+        EXPECT_EQ(posix::roundToMidnight(1759333500), 1759276800);
 }
 
-TEST(GetMidnightTest, AlreadyAtMidnightReturnsItself) {
+TEST(RoundToMidnightTest, AlreadyAtMidnightReturnsItself) {
         // Midnight  2025-10-01 00:00 UTC = 1759276800
-        EXPECT_EQ(posix::getMidnight(1759276800), 1759276800);
+        EXPECT_EQ(posix::roundToMidnight(1759276800), 1759276800);
 }
 
-TEST(GetCurrentMidnightTest, TwoCallsReturnSameValueWithinSameDay) {
+TEST(TodayMidnightTest, TwoCallsReturnSameValueWithinSameDay) {
         const time_t start = std::time(nullptr);
-        time_t       t1    = posix::getCurrentMidnight();
-        time_t       t2    = posix::getCurrentMidnight();
+        time_t       t1    = posix::todayMidnight();
+        time_t       t2    = posix::todayMidnight();
         const time_t end   = std::time(nullptr);
 
         if (dayDiffers(start, end)) {
-                t1 = posix::getCurrentMidnight();
-                t2 = posix::getCurrentMidnight();
+                t1 = posix::todayMidnight();
+                t2 = posix::todayMidnight();
         }
 
         EXPECT_EQ(t1, t2);
@@ -62,11 +62,11 @@ TEST(closerToNowTest, Hour2IsCloser) {
 
 TEST(TimeInteractionTest, CurrentUnixTimeAndCurrentMidnightAreSameDay) {
         time_t t1 = std::time(nullptr);
-        time_t t2 = posix::getCurrentMidnight();
+        time_t t2 = posix::todayMidnight();
 
         if (dayDiffers(t1, t2)) {
                 t1 = std::time(nullptr);
-                t2 = posix::getCurrentMidnight();
+                t2 = posix::todayMidnight();
         }
 
         EXPECT_LE((t1 - t2), timing::day);
