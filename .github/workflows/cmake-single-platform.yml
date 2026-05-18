@@ -39,7 +39,7 @@ jobs:
       # Build the program in the specified build directory.
       run: |
         export PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
-        cmake --build --preset {{env.BUILD_TYPE}}
+        cmake --build --preset ${{env.BUILD_TYPE}}
 
     - name: Test
       # Execute tests defined by the CMake configuration.
