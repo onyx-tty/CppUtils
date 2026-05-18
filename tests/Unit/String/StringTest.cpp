@@ -33,23 +33,23 @@ TEST(ToLowerTest, EmptyString) {
         EXPECT_EQ(str, "");
 }
 
-/* string_utils::toLowerCopy */
-TEST(ToLowerCopyTest, AllUpper) {
-        const std::string str = toLowerCopy("HELLO");
+/* string_utils::makeLower */
+TEST(makeLowerTest, AllUpper) {
+        const std::string str = makeLower("HELLO");
         EXPECT_EQ(str, "hello");
 }
 
-TEST(ToLowerCopyTest, MixedCase) {
-        const std::string str = toLowerCopy("WoOzY");
+TEST(makeLowerTest, MixedCase) {
+        const std::string str = makeLower("WoOzY");
         EXPECT_EQ(str, "woozy");
 }
 
-TEST(ToLowerCopyTest, AlreadyLower) {
-        const auto str = toLowerCopy("hello");
+TEST(makeLowerTest, AlreadyLower) {
+        const auto str = makeLower("hello");
         EXPECT_EQ(str, "hello");
 }
 
-TEST(ToLowerCopyTest, EmptyString) {
-        const auto str = toLowerCopy("");
+TEST(makeLowerTest, EmptyString) {
+        const auto str = makeLower("");
         EXPECT_EQ(str, "");
 }

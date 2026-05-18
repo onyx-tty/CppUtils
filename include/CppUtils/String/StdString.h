@@ -11,6 +11,6 @@ namespace string {
 void toLower(std::string& str);
 
 // Return a lowercase copy
-[[nodiscard]] std::string toLowerCopy(std::string str);
+[[nodiscard]] std::string makeLower(std::string str);
 
 } // namespace string

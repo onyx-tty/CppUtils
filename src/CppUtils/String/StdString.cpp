@@ -11,7 +11,7 @@ void string::toLower(std::string& str) {
         for (char& ch : str) { ch = std::tolower(static_cast<unsigned char>(ch)); }
 }
 
-std::string string::toLowerCopy(std::string str) {
+std::string string::makeLower(std::string str) {
         string::toLower(str);
         return str;
 }
