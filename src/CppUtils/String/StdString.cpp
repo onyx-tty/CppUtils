@@ -7,8 +7,9 @@
 #include <string>
 
 void string::toLower(std::string& str) {
-        // TODO Eliminate narrowing conversion
-        for (char& ch : str) { ch = std::tolower(static_cast<unsigned char>(ch)); }
+        for (char& ch : str) {
+                ch = static_cast<char>(std::tolower(static_cast<unsigned char>(ch)));
+        }
 }
 
 std::string string::makeLower(std::string str) {
