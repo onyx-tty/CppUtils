@@ -4,6 +4,8 @@
 #include "QtLogTest.h"
 #include "CppUtils/Log/QtLog.h"
 
+#include <QString>
+
 void displayTestLogs() {
         QINFO() << "Example of QINFO! QString:" << QString("abc") << "- string literal:" << "abc"
                 << "- int:" << 5;

@@ -5,6 +5,8 @@
 
 #include "CppUtils/String/QtString.h"
 
+#include <string>
+#include <type_traits>
 #include <QString>
 
 namespace qt::string {

@@ -9,6 +9,16 @@
 #include <QDebug>
 #include <QString>
 
+// Qt 6.5+ provides a dedicated header <QtLogging>.
+// Use it when possible to reduce compilation times.
+// For older Qt versions, fall back to the full <QtCore>.
+// <QtVersionChecks> didn't exist before Qt 6.5, so it can't be used either.
+#if __has_include(<QtEnvironmentVariables>) // Qt >=6.5
+        #include <QtLogging>
+#else
+        #include <QtGlobal> // Qt <6.5
+#endif
+
 /* Logging formatters */
 // Fatal - red
 #define QFATAL(fmt, ...) qt::log::detail::fatalImpl(QString::asprintf(fmt, ##__VA_ARGS__))

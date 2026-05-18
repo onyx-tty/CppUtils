@@ -8,6 +8,17 @@
 #include <source_location>
 #include <QString>
 
+// Qt 6.5+ provides dedicated headers <QtLogging> and <QtTypes>.
+// Use them when possible to reduce compilation times.
+// For older Qt versions, fall back to the full <QtCore>.
+// <QtVersionChecks> didn't exist before Qt 6.5, so it can't be used either.
+#if __has_include(<QtEnvironmentVariables>) // Qt >=6.5
+#       include <QtLogging>
+#       include <QtTypes>
+#else
+#       include <QtGlobal> // Qt <6.5
+#endif
+
 namespace qt::log::detail {
 
 void fatalImpl(const QString& msg, const std::source_location& loc) {
