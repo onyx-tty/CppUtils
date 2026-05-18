@@ -1,7 +1,6 @@
 include_guard(GLOBAL)
 
 add_library(CppUtils_UnitTests_String
-        CStringTest.cpp
         StringTest.cpp)
 add_library(CppUtils::UnitTests::String ALIAS CppUtils_UnitTests_String)
 
