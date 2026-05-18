@@ -7,8 +7,7 @@
 
 #include <QString>
 
-namespace qt {
-namespace string {
+namespace qt::string {
 
 // TODO Block through concepts
 template<typename T>
@@ -24,5 +23,4 @@ QString toQString(const T& value) {
         }
 }
 
-} // namespace string
-} // namespace qt
+} // namespace qt::string

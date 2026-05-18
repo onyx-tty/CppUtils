@@ -5,14 +5,12 @@
 
 #include <QString>
 
-namespace qt {
-namespace string {
+namespace qt::string {
 
 // Convert to QString if compatible
 template<typename T>
 [[nodiscard]] QString toQString(const T& value);
 
-} // namespace string
-} // namespace qt
+} // namespace qt::string
 
 #include "QtString.tpp"

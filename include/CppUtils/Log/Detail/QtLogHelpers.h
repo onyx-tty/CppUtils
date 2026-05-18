@@ -8,9 +8,7 @@
 #include <string_view>
 #include <QString>
 
-namespace qt {
-namespace log {
-namespace detail {
+namespace qt::log::detail {
 
 void fatalImpl(const QString&              msg,
                const std::source_location& loc = std::source_location::current());
@@ -25,8 +23,6 @@ void fatalImpl(const QString&              msg,
 template<typename MainStr, typename... RestStr>
 [[nodiscard]] inline QString concatArgs(const MainStr& main_string, const RestStr&... rest_strings);
 
-} // namespace detail
-} // namespace log
-} // namespace qt
+} // namespace qt::log::detail
 
 #include "QtLogHelpers.tpp"
