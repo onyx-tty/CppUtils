@@ -7,7 +7,7 @@
 
 namespace timing::posix {
 
-[[nodiscard]] time_t roundToMidnight(time_t timestamp);
+[[nodiscard]] constexpr time_t roundToMidnight(time_t timestamp);
 [[nodiscard]] time_t todayMidnight();
 [[nodiscard]] time_t closerToNow(time_t hour1, time_t hour2);
 

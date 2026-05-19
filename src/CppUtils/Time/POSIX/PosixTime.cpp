@@ -8,7 +8,7 @@
 #include <cstdlib>
 #include <ctime>
 
-time_t timing::posix::roundToMidnight(time_t timestamp) {
+constexpr time_t timing::posix::roundToMidnight(time_t timestamp) {
         const time_t days_since_epoch = timestamp / timing::day;
         const time_t midnight         = days_since_epoch * timing::day;
 
