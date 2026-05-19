@@ -1,6 +1,6 @@
 include_guard(GLOBAL)
 
-add_library(CppUtils_UnitTests_String
+add_library(CppUtils_UnitTests_String OBJECT
         StringTest.cpp)
 add_library(CppUtils::UnitTests::String ALIAS CppUtils_UnitTests_String)
 
@@ -16,7 +16,7 @@ target_link_libraries(CppUtils_UnitTests_String PUBLIC
         GTest::gtest_main)
 
 if(CPPUTILS_ENABLE_QT)
-        add_library(CppUtils_UnitTests_String_Qt
+        add_library(CppUtils_UnitTests_String_Qt OBJECT
                 QtStringTest.cpp)
         add_library(CppUtils::UnitTests::String::Qt ALIAS CppUtils_UnitTests_String_Qt)
 

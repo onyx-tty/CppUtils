@@ -11,7 +11,7 @@ target_include_directories(CppUtils_UnitTests PRIVATE
 
 target_link_libraries(CppUtils_UnitTests PRIVATE
         CppUtils::UnitTests::String
-        CppUtils::UnitTests::Time)
+        CppUtils::UnitTests::Time::POSIX)
 
 if(CPPUTILS_ENABLE_QT)
         target_link_libraries(CppUtils_UnitTests PRIVATE
