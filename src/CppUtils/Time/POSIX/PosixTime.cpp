@@ -2,18 +2,10 @@
 // SPDX-License-Identifier: MIT
 
 #include "CppUtils/Time/POSIX/PosixTime.h"
-#include "CppUtils/Time/Constants/Length.h"
 
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
-
-constexpr time_t timing::posix::roundToMidnight(time_t timestamp) {
-        const time_t days_since_epoch = timestamp / timing::day;
-        const time_t midnight         = days_since_epoch * timing::day;
-
-        return midnight;
-}
 
 time_t timing::posix::todayMidnight() {
         return timing::posix::roundToMidnight(std::time(nullptr));
