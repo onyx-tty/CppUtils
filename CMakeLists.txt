@@ -19,8 +19,9 @@ endif()
 # Export compile_commands.json to ensure language servers work properly
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Build shared by default
-option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+# Build static by default
+option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
+
 option(LOG_DEBUG "Print debug-level logs" OFF)
 option(CPPUTILS_ENABLE_QT "Enable Qt in CppUtils" OFF)
 
