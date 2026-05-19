@@ -16,33 +16,31 @@ using namespace timing;
         return (t1 - t2) > timing::day;
 }
 
-TEST(RoundToMidnightTest, ReturnsCorrectMidnight) {
+/* roundToMidnight */
+TEST(RoundToMidnightTest, Afternoon) {
         // Afternoon 2025-10-01 15:45 UTC = 1759333500
         // Midnight  2025-10-01 00:00 UTC = 1759276800
         EXPECT_EQ(posix::roundToMidnight(1759333500), 1759276800);
 }
 
-TEST(RoundToMidnightTest, ReturnsItselfAtMidnight) {
+TEST(RoundToMidnightTest, AlreadyMidnight) {
         // Midnight  2025-10-01 00:00 UTC = 1759276800
         EXPECT_EQ(posix::roundToMidnight(1759276800), 1759276800);
 }
 
-// TODO TwoCallsSpacedBy24HoursIfCalledOnDifferentDays
-// t1 = findMidnight(), t2 = findMidnight() + epoch_duration::day
-// requires params
+/* closerToNow */
+TEST(CloserToNowTest, FirstIsCloser) {
+        const time_t first  = time(nullptr);
+        const time_t second = 555;
+        const time_t closer = posix::closerToNow(first, second);
 
-TEST(CloserToNowTest, ReturnsHour1IfCloser) {
-        const time_t hour1  = time(nullptr);
-        const time_t hour2  = 555;
-        const time_t closer = posix::closerToNow(hour1, hour2);
-
-        EXPECT_EQ(closer, hour1);
+        EXPECT_EQ(closer, first);
 }
 
-TEST(CloserToNowTest, ReturnsHour2IfCloser) {
-        const time_t hour1  = 555;
-        const time_t hour2  = time(nullptr);
-        const time_t closer = posix::closerToNow(hour1, hour2);
+TEST(CloserToNowTest, SecondIsCloser) {
+        const time_t first  = 555;
+        const time_t second = time(nullptr);
+        const time_t closer = posix::closerToNow(first, second);
 
-        EXPECT_EQ(closer, hour2);
+        EXPECT_EQ(closer, second);
 }

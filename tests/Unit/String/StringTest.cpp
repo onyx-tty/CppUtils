@@ -9,19 +9,19 @@
 using namespace string;
 
 /* toLower */
-TEST(ToLowerTest, HandlesAllUpper) {
+TEST(ToLowerTest, AllUpper) {
         std::string str = "HELLO";
         toLower(str);
         EXPECT_EQ(str, "hello");
 }
 
-TEST(ToLowerTest, HandlesMixedCase) {
+TEST(ToLowerTest, MixedCase) {
         std::string str = "WoOzY";
         toLower(str);
         EXPECT_EQ(str, "woozy");
 }
 
-TEST(ToLowerTest, HandlesAlreadyLower) {
+TEST(ToLowerTest, AlreadyLower) {
         std::string str = "hello";
         toLower(str);
         EXPECT_EQ(str, "hello");
@@ -34,19 +34,19 @@ TEST(ToLowerTest, HandlesEmptyString) {
 }
 
 /* toUpper */
-TEST(ToUpperTest, HandlesAllLower) {
+TEST(ToUpperTest, AllLower) {
         std::string str = "hello";
         toUpper(str);
         EXPECT_EQ(str, "HELLO");
 }
 
-TEST(ToUpperTest, HandlesMixedCase) {
+TEST(ToUpperTest, MixedCase) {
         std::string str = "WoOzY";
         toUpper(str);
         EXPECT_EQ(str, "WOOZY");
 }
 
-TEST(ToUpperTest, HandlesAlreadyUpper) {
+TEST(ToUpperTest, AlreadyUpper) {
         std::string str = "HELLO";
         toUpper(str);
         EXPECT_EQ(str, "HELLO");
