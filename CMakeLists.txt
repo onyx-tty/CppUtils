@@ -25,7 +25,7 @@ option(LOG_DEBUG "Print debug-level logs" OFF)
 option(CPPUTILS_ENABLE_QT "Enable Qt in CppUtils" OFF)
 
 if(CPPUTILS_ENABLE_QT)
-        find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+        find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 endif()
 
 # Store and propagate INCLUDE_DIR and SRC_DIR for use in target_include_directories
