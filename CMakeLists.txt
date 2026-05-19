@@ -11,8 +11,9 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 if(ENABLE_CLANG_TIDY)
+        find_program(CLANG_TIDY_BINARIES clang-tidy REQUIRED)
         set(CMAKE_CXX_CLANG_TIDY
-                clang-tidy;)
+                ${CLANG_TIDY_BINARIES})
 endif()
 
 # Export compile_commands.json to ensure language servers work properly
