@@ -9,6 +9,7 @@
 
 using namespace qt::string;
 
+/* toQString */
 TEST(ToQStringTest, HandlesQString) {
         QString qstr = "aBc";
         EXPECT_EQ(toQString(qstr), "aBc");

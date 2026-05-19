@@ -8,94 +8,94 @@
 
 using namespace string;
 
-/* string_utils::toLower */
-TEST(ToLowerTest, AllUpper) {
+/* toLower */
+TEST(ToLowerTest, HandlesAllUpper) {
         std::string str = "HELLO";
         toLower(str);
         EXPECT_EQ(str, "hello");
 }
 
-TEST(ToLowerTest, MixedCase) {
+TEST(ToLowerTest, HandlesMixedCase) {
         std::string str = "WoOzY";
         toLower(str);
         EXPECT_EQ(str, "woozy");
 }
 
-TEST(ToLowerTest, AlreadyLower) {
+TEST(ToLowerTest, HandlesAlreadyLower) {
         std::string str = "hello";
         toLower(str);
         EXPECT_EQ(str, "hello");
 }
 
-TEST(ToLowerTest, EmptyString) {
+TEST(ToLowerTest, HandlesEmptyString) {
         std::string str = "";
         toLower(str);
         EXPECT_EQ(str, "");
 }
 
-/* string_utils::makeLower */
-TEST(makeLowerTest, AllUpper) {
+/* makeLower */
+TEST(MakeLowerTest, HandlesAllUpper) {
         const std::string str = makeLower("HELLO");
         EXPECT_EQ(str, "hello");
 }
 
-TEST(makeLowerTest, MixedCase) {
+TEST(MakeLowerTest, HandlesMixedCase) {
         const std::string str = makeLower("WoOzY");
         EXPECT_EQ(str, "woozy");
 }
 
-TEST(makeLowerTest, AlreadyLower) {
+TEST(MakeLowerTest, HandlesAlreadyLower) {
         const auto str = makeLower("hello");
         EXPECT_EQ(str, "hello");
 }
 
-TEST(makeLowerTest, EmptyString) {
+TEST(MakeLowerTest, HandlesEmptyString) {
         const auto str = makeLower("");
         EXPECT_EQ(str, "");
 }
 
-/* string_utils::toUpper */
-TEST(ToUpperTest, AllLower) {
+/* toUpper */
+TEST(ToUpperTest, HandlesAllLower) {
         std::string str = "hello";
         toUpper(str);
         EXPECT_EQ(str, "HELLO");
 }
 
-TEST(ToUpperTest, MixedCase) {
+TEST(ToUpperTest, HandlesMixedCase) {
         std::string str = "WoOzY";
         toUpper(str);
         EXPECT_EQ(str, "WOOZY");
 }
 
-TEST(ToUpperTest, AlreadyUpper) {
+TEST(ToUpperTest, HandlesAlreadyUpper) {
         std::string str = "HELLO";
         toUpper(str);
         EXPECT_EQ(str, "HELLO");
 }
 
-TEST(ToUpperTest, EmptyString) {
+TEST(ToUpperTest, HandlesEmptyString) {
         std::string str = "";
         toUpper(str);
         EXPECT_EQ(str, "");
 }
 
-/* string_utils::makeUpper */
-TEST(makeUpperTest, AllLower) {
+/* makeUpper */
+TEST(MakeUpperTest, HandlesAllLower) {
         const std::string str = makeUpper("hello");
         EXPECT_EQ(str, "HELLO");
 }
 
-TEST(makeUpperTest, MixedCase) {
+TEST(MakeUpperTest, HandlesMixedCase) {
         const std::string str = makeUpper("WoOzY");
         EXPECT_EQ(str, "WOOZY");
 }
 
-TEST(makeUpperTest, AlreadyUpper) {
+TEST(MakeUpperTest, HandlesAlreadyUpper) {
         const auto str = makeUpper("HELLO");
         EXPECT_EQ(str, "HELLO");
 }
 
-TEST(makeUpperTest, EmptyString) {
+TEST(MakeUpperTest, HandlesEmptyString) {
         const auto str = makeUpper("");
         EXPECT_EQ(str, "");
 }
