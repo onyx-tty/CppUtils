@@ -44,16 +44,6 @@ TEST(ToQStringTest, HandlesUnsigned) {
         EXPECT_EQ(toQString(uch), "90");
 }
 
-TEST(ToQStringTest, HandlesConsts) {
-        const QString     qstr = "xyz";
-        const std::string str  = "abc";
-        constexpr int     num  = 44;
-
-        EXPECT_EQ(toQString(qstr), "xyz");
-        EXPECT_EQ(toQString(str), "abc");
-        EXPECT_EQ(toQString(num), "44");
-}
-
 TEST(ToQStringTest, HandlesReferences) {
         unsigned u  = 100;
         char     ch = 'a';

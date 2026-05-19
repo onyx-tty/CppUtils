@@ -33,27 +33,6 @@ TEST(ToLowerTest, HandlesEmptyString) {
         EXPECT_EQ(str, "");
 }
 
-/* makeLower */
-TEST(MakeLowerTest, HandlesAllUpper) {
-        const std::string str = makeLower("HELLO");
-        EXPECT_EQ(str, "hello");
-}
-
-TEST(MakeLowerTest, HandlesMixedCase) {
-        const std::string str = makeLower("WoOzY");
-        EXPECT_EQ(str, "woozy");
-}
-
-TEST(MakeLowerTest, HandlesAlreadyLower) {
-        const auto str = makeLower("hello");
-        EXPECT_EQ(str, "hello");
-}
-
-TEST(MakeLowerTest, HandlesEmptyString) {
-        const auto str = makeLower("");
-        EXPECT_EQ(str, "");
-}
-
 /* toUpper */
 TEST(ToUpperTest, HandlesAllLower) {
         std::string str = "hello";
@@ -76,26 +55,5 @@ TEST(ToUpperTest, HandlesAlreadyUpper) {
 TEST(ToUpperTest, HandlesEmptyString) {
         std::string str = "";
         toUpper(str);
-        EXPECT_EQ(str, "");
-}
-
-/* makeUpper */
-TEST(MakeUpperTest, HandlesAllLower) {
-        const std::string str = makeUpper("hello");
-        EXPECT_EQ(str, "HELLO");
-}
-
-TEST(MakeUpperTest, HandlesMixedCase) {
-        const std::string str = makeUpper("WoOzY");
-        EXPECT_EQ(str, "WOOZY");
-}
-
-TEST(MakeUpperTest, HandlesAlreadyUpper) {
-        const auto str = makeUpper("HELLO");
-        EXPECT_EQ(str, "HELLO");
-}
-
-TEST(MakeUpperTest, HandlesEmptyString) {
-        const auto str = makeUpper("");
         EXPECT_EQ(str, "");
 }

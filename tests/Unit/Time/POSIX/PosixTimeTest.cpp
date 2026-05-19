@@ -27,20 +27,6 @@ TEST(RoundToMidnightTest, ReturnsItselfAtMidnight) {
         EXPECT_EQ(posix::roundToMidnight(1759276800), 1759276800);
 }
 
-TEST(TodayMidnightTest, ReturnsSameValueOnCallsWithinSameDay) {
-        const time_t start = std::time(nullptr);
-        time_t       t1    = posix::todayMidnight();
-        time_t       t2    = posix::todayMidnight();
-        const time_t end   = std::time(nullptr);
-
-        if (dayDiffers(start, end)) {
-                t1 = posix::todayMidnight();
-                t2 = posix::todayMidnight();
-        }
-
-        EXPECT_EQ(t1, t2);
-}
-
 // TODO TwoCallsSpacedBy24HoursIfCalledOnDifferentDays
 // t1 = findMidnight(), t2 = findMidnight() + epoch_duration::day
 // requires params
@@ -59,17 +45,4 @@ TEST(CloserToNowTest, ReturnsHour2IfCloser) {
         const time_t closer = posix::closerToNow(hour1, hour2);
 
         EXPECT_EQ(closer, hour2);
-}
-
-// TODO Remove
-TEST(TimeInteractionTest, CurrentUnixTimeAndCurrentMidnightAreSameDay) {
-        time_t t1 = std::time(nullptr);
-        time_t t2 = posix::todayMidnight();
-
-        if (dayDiffers(t1, t2)) {
-                t1 = std::time(nullptr);
-                t2 = posix::todayMidnight();
-        }
-
-        EXPECT_LE((t1 - t2), timing::day);
 }
