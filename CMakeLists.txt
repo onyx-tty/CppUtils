@@ -12,8 +12,7 @@ include(CMakePackageConfigHelpers)
 
 if(ENABLE_CLANG_TIDY)
         set(CMAKE_CXX_CLANG_TIDY
-                clang-tidy;
-                -header-filter=.;)
+                clang-tidy;)
 endif()
 
 # Export compile_commands.json to ensure language servers work properly
