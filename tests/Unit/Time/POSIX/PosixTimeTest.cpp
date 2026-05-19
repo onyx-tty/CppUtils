@@ -2,19 +2,11 @@
 // SPDX-License-Identifier: MIT
 
 #include "CppUtils/Time/POSIX/PosixTime.h"
-#include "CppUtils/Time/Constants/Length.h"
 
-#include <cstddef>
 #include <ctime>
 #include <gtest/gtest.h>
 
 using namespace timing;
-
-// Check if each was taken before and after midnight respectively
-// If yes, the unit test may have been ran during midnight
-[[nodiscard]] inline bool dayDiffers(const size_t& t1, const size_t& t2) {
-        return (t1 - t2) > timing::day;
-}
 
 /* roundToMidnight */
 TEST(RoundToMidnightTest, Afternoon) {
