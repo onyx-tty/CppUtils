@@ -1,0 +1,28 @@
+---
+Checks: >
+  *,
+  -altera-*,
+  -boost-*,
+  -fuchsia-*,
+  -google-build-using-namespace,
+  -google-readability-todo,
+  -hicpp-*,
+  -llvmlibc-*,
+  -llvm-header-guard,
+  -misc-header-include-cycle,
+  -modernize-use-trailing-return-type,
+  -portability-avoid-pragma-once,
+  -portability-restrict-system-includes
+HeaderFilterRegex: '.*'
+
+CheckOptions:
+  - key: readability-identifier-length.IgnoredVariableNames
+    value: 'ch|id|ok|t1|t2'
+  - key: readability-identifier-length.IgnoredBindingNames
+    value: 'ch|id|ok|t1|t2'
+  - key: readability-identifier-length.IgnoredParameterNames
+    value: 'ch|id|ok|t1|t2'
+  - key: readability-identifier-length.IgnoredLoopCounterNames
+    value: 'n'
+
+...
