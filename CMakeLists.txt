@@ -13,7 +13,9 @@ include(CMakePackageConfigHelpers)
 if(ENABLE_CLANG_TIDY)
         find_program(CLANG_TIDY_BINARIES clang-tidy REQUIRED)
         set(CMAKE_CXX_CLANG_TIDY
-                ${CLANG_TIDY_BINARIES})
+                ${CLANG_TIDY_BINARIES}
+                --extra-arg=-Wno-unknown-warning-option
+                --warnings-as-errors=*)
 endif()
 
 # Export compile_commands.json to ensure language servers work properly
