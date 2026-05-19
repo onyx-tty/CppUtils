@@ -13,5 +13,15 @@ Checks: >
   -portability-avoid-pragma-once,
   -portability-restrict-system-includes
 HeaderFilterRegex: '.*'
-...
 
+CheckOptions:
+  - key: readability-identifier-length.IgnoredVariableNames
+    value: 'ch|id|ok'
+  - key: readability-identifier-length.IgnoredBindingNames
+    value: 'ch|id|ok'
+  - key: readability-identifier-length.IgnoredParameterNames
+    value: 'ch|id|ok'
+  - key: readability-identifier-length.IgnoredLoopCounterNames
+    value: 'n'
+
+...
