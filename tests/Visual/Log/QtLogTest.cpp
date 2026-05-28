@@ -4,20 +4,33 @@
 #include "QtLogTest.h"
 #include "CppUtils/Log/QtLog.h"
 
+#include <QDebug>
 #include <QString>
 
+// Qt 6.5+ provides a dedicated header <QtLogging>.
+// Use it when possible to reduce compilation times.
+// For older Qt versions, fall back to the full <QtCore>.
+// <QtVersionChecks> didn't exist before Qt 6.5, so it can't be used either.
+#if __has_include(<QtEnvironmentVariables>) // Qt >=6.5
+        #include <QtLogging>
+#else
+        #include <QtGlobal> // Qt <6.5
+#endif
+
 void displayTestLogs() {
-        QINFO() << "Example of QINFO! QString:" << QString("abc") << "- string literal:" << "abc"
+        qt::log::setupLogging();
+
+        qInfo() << "Example of QINFO! QString:" << QString("abc") << "- string literal:" << "abc"
                 << "- int:" << 5;
 
-        QDEBUG() << "Example of QDEBUG! QString:" << QString("abc") << "- string literal:" << "abc"
+        qDebug() << "Example of QDEBUG! QString:" << QString("abc") << "- string literal:" << "abc"
                  << "- int:" << 5;
 
-        QWARNING() << "Example of QWARNING! QString:" << QString("abc")
+        qWarning() << "Example of QWARNING! QString:" << QString("abc")
                    << "- string literal:" << "abc" << "- int:" << 5;
 
-        QCRITICAL() << "Example of QCRITICAL! QString:" << QString("abc")
+        qCritical() << "Example of QCRITICAL! QString:" << QString("abc")
                     << "- string literal:" << "abc" << "- int:" << 5;
 
-        QFATAL("Example of QFATAL! String literal: %s - int: %i", "abc", 5);
+        qFatal("Example of QFATAL! String literal: %s - int: %i", "abc", 5);
 }

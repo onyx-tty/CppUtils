@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(CppUtils VERSION 0.16.7 LANGUAGES CXX)
+project(CppUtils VERSION 0.17.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -79,7 +79,7 @@ install( # Install compiled artifacts to correct destinations, register all targ
 if(CPPUTILS_ENABLE_QT)
         install(TARGETS CppUtils_AllQt
                         CppUtils_String_Qt
-                        CppUtils_Log_Qt CppUtils_Log_Qt_Helpers
+                        CppUtils_Log_Qt
                 EXPORT CppUtils_export
                 ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
                 LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
