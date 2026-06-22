@@ -1,5 +1,3 @@
-include_guard(GLOBAL)
-
 add_library(CppUtils_Time_Constants INTERFACE)
 add_library(CppUtils::Time::Constants ALIAS CppUtils_Time_Constants)
 

@@ -1,5 +1,3 @@
-include_guard(GLOBAL)
-
 add_library(CppUtils_Time_POSIX
         PosixTime.cpp)
 add_library(CppUtils::Time::POSIX ALIAS CppUtils_Time_POSIX)

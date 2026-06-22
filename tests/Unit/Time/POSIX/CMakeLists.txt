@@ -1,5 +1,3 @@
-include_guard(GLOBAL)
-
 add_library(CppUtils_UnitTests_Time_POSIX OBJECT
         PosixTimeTest.cpp)
 add_library(CppUtils::UnitTests::Time::POSIX ALIAS CppUtils_UnitTests_Time_POSIX)

@@ -1,8 +1,6 @@
 add_subdirectory(String)
 add_subdirectory(Time)
 
-include_guard(GLOBAL)
-
 add_executable(CppUtils_UnitTests dummy.cpp)
 
 target_include_directories(CppUtils_UnitTests PRIVATE

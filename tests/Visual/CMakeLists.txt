@@ -1,7 +1,5 @@
 add_subdirectory(Log)
 
-include_guard(GLOBAL)
-
 add_executable(CppUtils_VisualTests main.cpp)
 
 target_include_directories(CppUtils_VisualTests PRIVATE

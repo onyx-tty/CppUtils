@@ -1,5 +1,3 @@
-include_guard(GLOBAL)
-
 if(CPPUTILS_ENABLE_QT)
         add_library(CppUtils_Log_Qt
                 QtLog.cpp)
