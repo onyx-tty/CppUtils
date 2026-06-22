@@ -17,5 +17,5 @@ void qt::log::setupLogging() {
                 u"%{if-debug}\033[36m[DEBUG]\033[0m   %{endif}"_s
                 u"%{if-info}\033[32m[INFO]\033[0m    %{endif}"_s
                 u" %{function}: %{message}"_s);
-        // clan-format on
+        // clang-format on
 }
