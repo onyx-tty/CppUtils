@@ -9,8 +9,7 @@
                         "binaryDir": "build/Debug",
                         "cacheVariables": {
                                 "CMAKE_BUILD_TYPE": "Debug",
-                                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/build/${presetName}/install",
-                                "LOG_DEBUG": "ON"
+                                "CMAKE_INSTALL_PREFIX" : "${sourceDir}/build/${presetName}/install"
                         }
                 },
                 {
@@ -23,8 +22,7 @@
                                 "CMAKE_BUILD_TYPE": "Debug",
                                 "CMAKE_INSTALL_PREFIX" : "${sourceDir}/build/${presetName}/install",
                                 "CMAKE_CXX_COMPILER": "clang++",
-                                "ENABLE_CLANG_TIDY": "ON",
-                                "LOG_DEBUG": "ON"
+                                "ENABLE_CLANG_TIDY": "ON"
                         }
                 },
                 {

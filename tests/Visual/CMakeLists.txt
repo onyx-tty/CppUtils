@@ -6,11 +6,6 @@ target_include_directories(CppUtils_VisualTests PRIVATE
         ${INCLUDE_DIR}
         ${CMAKE_CURRENT_LIST_DIR})
 
-if(LOG_DEBUG)
-        target_compile_definitions(CppUtils_VisualTests PUBLIC
-                LOG_DEBUG)
-endif()
-
 if(CPPUTILS_ENABLE_QT)
         target_compile_definitions(CppUtils_VisualTests PUBLIC
                 CPPUTILS_ENABLE_QT)

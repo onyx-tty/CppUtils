@@ -24,7 +24,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Build static by default
 option(BUILD_SHARED_LIBS "Build using shared libraries" OFF)
 
-option(LOG_DEBUG "Print debug-level logs" OFF)
 option(CPPUTILS_ENABLE_QT "Enable Qt in CppUtils" OFF)
 
 if(CPPUTILS_ENABLE_QT)

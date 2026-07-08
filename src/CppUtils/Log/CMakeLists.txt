@@ -9,9 +9,4 @@ if(CPPUTILS_ENABLE_QT)
 
         target_link_libraries(CppUtils_Log_Qt PUBLIC
                 Qt${QT_VERSION_MAJOR}::Core)
-
-        # Print debug-level logs
-        if(${LOG_DEBUG}) # refer to the CACHE version specifically
-                target_compile_definitions(CppUtils_Log_Qt INTERFACE LOG_DEBUG)
-        endif()
 endif()
