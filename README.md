@@ -14,9 +14,12 @@ Available libraries:
 
 ### Log
 
-Macros wrapping Qt's logging functions with std::source_location to automatically include and format class/function context.
+Configuration helper `setupLogging()` that pre-configures Qt logging patterns. It adds:
 
-Available macros: `QFATAL()`, `QCRITICAL()`, `QWARNING()`, `QDEBUG()`, `QINFO()`
+* Colored indicators for the type of logging message, namely:
+`[FATAL]`, `[CRITICAL]`, `[WARNING]`, `[DEBUG]`, `[INFO]`.
+
+* Class or namespace followed by the function name.
 
 ``` C++
 class Printer {
